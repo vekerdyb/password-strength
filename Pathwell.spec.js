@@ -37,23 +37,23 @@ describe('Pathwell library', () => {
     });
 
     it('should return l for lowercase character', () => {
-      expect(Pathwell.getCharacterClass('a')).to.be.equal('l')
+      expect(Pathwell.getCharacterClass('a')).to.equal('l')
     });
 
     it('should return u for uppercase character', () => {
-      expect(Pathwell.getCharacterClass('A')).to.be.equal('u')
+      expect(Pathwell.getCharacterClass('A')).to.equal('u')
     });
 
     it('should return d for digit', () => {
-      expect(Pathwell.getCharacterClass('1')).to.be.equal('d')
+      expect(Pathwell.getCharacterClass('1')).to.equal('d')
     });
 
     it('should return s for special character', () => {
-      expect(Pathwell.getCharacterClass('*')).to.be.equal('s')
+      expect(Pathwell.getCharacterClass('*')).to.equal('s')
     });
 
     it('should return s for non-ascii letter', () => {
-      expect(Pathwell.getCharacterClass('á')).to.be.equal('s')
+      expect(Pathwell.getCharacterClass('á')).to.equal('s')
     });
 
   });

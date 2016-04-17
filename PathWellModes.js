@@ -1,0 +1,1 @@
+export const BLACKLIST_100 = 'BLACKLIST_100';
