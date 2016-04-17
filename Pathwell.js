@@ -1,3 +1,5 @@
+import data from './top100.js';
+
 const LOWER = /[a-z]/;
 const UPPER = /[A-Z]/;
 const DIGIT = /[0-9]/;
@@ -15,15 +17,32 @@ function getCharacterClass(char) {
   return 's';
 }
 
-function getTopology(string) {
+function getTopology(string='') {
+
   return string
     .split('')
-    .map(c => getCharacterClass(c))
-    .join('');
+    .map(c => getCharacterClass(c));
 }
 
+function getClassCounts(string) {
+  let topology = getTopology(string);
+  let counts = {
+    'l': 0,
+    'u': 0,
+    'd': 0,
+    's': 0
+  };
+  topology.forEach(t => counts[t]++);
+  return counts;
+}
+
+function isTop100(string) {
+  return data.top100.indexOf(getTopology(string).join('')) > -1;
+}
 
 export default {
   getCharacterClass,
-  getTopology
+  getTopology,
+  getClassCounts,
+  isTop100
 };
