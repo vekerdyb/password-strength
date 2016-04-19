@@ -8,7 +8,6 @@ https://blog.korelogic.com/blog/2014/04/04/pathwell_topologies
 Coming soon.
 
 # Roadmap
-- [ ] add missing tests
 - [ ] add option to save topology to server (auditing mode)
 - [ ] add option to check existing topologies on a server and provide async feedback about the topology (maximum use count mode)
 - [ ] add simple backend server
