@@ -41,10 +41,64 @@ describe('PasswordStrength', () => {
 
 });
 
-describe('meetsMinimumRequirements function', () => {
-  // TODO
-});
+describe('minimumRequirements options', () => {
 
-describe('getPasswordStrengthMessage function', () => {
+  it('should return .5 if password does not have enough lowercase characters', () => {
+    let options = {
+      minRequirements: {
+        l: 2
+      },
+      minLength: 0,
+      pathWellMode: null
+    };
+    expect(passwordStrength('IaMCAPS', options)).to.equal(.5);
+  });
+
+  it('should return .5 if password does not have enough uppercase characters', () => {
+    let options = {
+      minRequirements: {
+        u: 2
+      },
+      minLength: 0,
+      pathWellMode: null
+    };
+    expect(passwordStrength('iAmlowercase', options)).to.equal(.5);
+  });
+
+  it('should return .5 if password does not have enough digits', () => {
+    let options = {
+      minRequirements: {
+        d: 2
+      },
+      minLength: 0,
+      pathWellMode: null
+    };
+    expect(passwordStrength('password1', options)).to.equal(.5);
+  });
+
+  it('should return .5 if password does not have enough special characters', () => {
+    let options = {
+      minRequirements: {
+        s: 2
+      },
+      minLength: 0,
+      pathWellMode: null
+    };
+    expect(passwordStrength('password*', options)).to.equal(.5);
+  });
+
+  it('should return 1 if password matches requirements', () => {
+    let options = {
+      minRequirements: {
+        l: 1,
+        u: 1,
+        d: 1,
+        s: 1
+      },
+      minLength: 0,
+      pathWellMode: null
+    };
+    expect(passwordStrength('Pa1*', options)).to.equal(1);
+  });
 
 });

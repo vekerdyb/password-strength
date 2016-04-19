@@ -43,15 +43,4 @@ function passwordStrength(password, options) {
   return 1;
 }
 
-function getPasswordStrengthMessage(passwordStrength) {
-  switch (passwordStrength) {
-    case 0:
-      return 'The password is too short';
-    case .5:
-      return 'The password matches a known topology';
-    case 1:
-      return 'Good password'
-  }
-}
-
 export default passwordStrength;
