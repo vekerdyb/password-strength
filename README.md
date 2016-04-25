@@ -1,4 +1,4 @@
-# password-strength
+# password-strength ![build-status](https://travis-ci.org/vekerdyb/password-strength.svg?branch=master)
 JavaSript implementation of KoreLogic's PathWell topologies to determine the strength of a given password.
 https://www.korelogic.com/Resources/Presentations/bsidesavl_pathwell_2014-06.pdf
 https://blog.korelogic.com/blog/2014/04/04/pathwell_topologies
