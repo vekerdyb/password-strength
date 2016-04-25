@@ -1,8 +1,12 @@
 {
   "name": "pathwell",
-  "version": "0.0.1",
-  "description": "Password topology library",
+  "version": "0.1.0",
+  "description": "Password strength checker library including PathWell topology checks",
   "main": "Pathwell.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vekerdyb/password-strength.git"
+  },
   "scripts": {
     "test": "mocha --compilers js:babel-core/register --recursive ./**/*spec.js",
     "tdd": "npm test -- -R dot --watch"

@@ -26,4 +26,4 @@ npm run tdd # continuous running
 ```
 
 # Legal
-Not 100% sure yet
+Coming soon.
