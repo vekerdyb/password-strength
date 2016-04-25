@@ -1,4 +1,4 @@
-import passwordStrength from '../src/PasswordStrength';
+import { passwordStrength } from '../src/PasswordStrength';
 import { expect } from 'chai';
 
 describe('PasswordStrength', () => {

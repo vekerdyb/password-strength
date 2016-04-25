@@ -43,4 +43,9 @@ function passwordStrength(password, options) {
   return 1;
 }
 
-export default passwordStrength;
+export {
+  passwordStrength,
+  meetsMinimumRequirements,
+  defaultOptions,
+  PathWell
+};
