@@ -1,6 +1,6 @@
 {
-  "name": "password-strength",
-  "version": "0.1.0",
+  "name": "pathwell",
+  "version": "0.2.2",
   "description": "Password strength checker library including PathWell topology checks",
   "main": "dist/PasswordStrength.js",
   "repository": {
