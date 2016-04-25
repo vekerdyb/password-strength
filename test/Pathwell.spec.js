@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import Pathwell from './Pathwell';
+import Pathwell from '../src/Pathwell';
 
 describe('Pathwell library', () => {
 
