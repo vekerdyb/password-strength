@@ -48,7 +48,11 @@ function passwordStrength(password) {
   if (PathWell.isTop100(password)) {
     return PASSWORD_STRENGTH.MEDIUM;
   }
-  return PASSWORD_STRENGTH.STRONG;
+  const classCounts = PathWell.getClassCounts(password);
+  if (password.length > 8 && classCounts.s > 0 && classCounts.u > 0 && classCounts.d > 0 && classCounts.l > 0) {
+    return PASSWORD_STRENGTH.STRONG;
+  }
+  return PASSWORD_STRENGTH.FAIR;
 }
 
 export {

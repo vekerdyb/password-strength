@@ -27,9 +27,12 @@ describe('PasswordStrength', () => {
     expect(passwordStrength('fwaqoy38')).to.equal(PASSWORD_STRENGTH.MEDIUM)
   });
 
-  it('should return STRONG otherwise', () => {
+  it('should return STRONG if length is above 8, contains all 4 character classes and not common topology', () => {
     expect(passwordStrength('Real&g45d')).to.equal(PASSWORD_STRENGTH.STRONG)
   });
 
-  
+  it('should return FAIR otherwise', () => {
+    expect(passwordStrength('real&g45d')).to.equal(PASSWORD_STRENGTH.FAIR)
+  });
+
 });
