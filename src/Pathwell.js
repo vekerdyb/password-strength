@@ -1,4 +1,4 @@
-import data from './top100.js';
+import top100 from './Top100Topologies.js';
 
 const LOWER = /[a-z]/;
 const UPPER = /[A-Z]/;
@@ -37,7 +37,7 @@ function getClassCounts(string) {
 }
 
 function isTop100(string) {
-  return data.top100.indexOf(getTopology(string).join('')) > -1;
+  return top100.indexOf(getTopology(string).join('')) > -1;
 }
 
 export default {

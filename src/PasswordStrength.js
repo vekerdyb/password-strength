@@ -1,6 +1,6 @@
 import {BLACKLIST_100} from './PathWellModes.js';
 import PathWell from './Pathwell';
-import merge from 'deepmerge';
+import Top1000Passwords from './Top1000Passwords.js';
 
 
 const defaultOptions = {
@@ -24,28 +24,37 @@ function meetsMinimumRequirements(password, options) {
   return true;
 }
 
-function passwordStrength(password, options) {
-  options = options ? merge(defaultOptions, options) : defaultOptions;
+const PASSWORD_STRENGTH = {
+  VERY_WEAK: 0,
+  WEAK: .25,
+  MEDIUM: .5,
+  FAIR: .75,
+  STRONG: 1
+};
+
+function passwordStrength(password) {
   if (typeof password === 'undefined') {
-    return undefined;
+    return;
   }
-  if (password.length < options.minLength) {
-    return 0;
+  if (Top1000Passwords.indexOf(password) > -1) {
+    return PASSWORD_STRENGTH.VERY_WEAK;
   }
-  if (!meetsMinimumRequirements(password, options)) {
-    return .5;
+  if (password.length < 6) {
+    return PASSWORD_STRENGTH.VERY_WEAK;
   }
-  if (options.pathWellMode === BLACKLIST_100) {
-    if (PathWell.isTop100(password)) {
-      return .75;
-    }
+  if (password.length < 8 && password.toLowerCase() === password) {
+    return PASSWORD_STRENGTH.WEAK;
   }
-  return 1;
+  if (PathWell.isTop100(password)) {
+    return PASSWORD_STRENGTH.MEDIUM;
+  }
+  return PASSWORD_STRENGTH.STRONG;
 }
 
 export {
   passwordStrength,
   meetsMinimumRequirements,
   defaultOptions,
-  PathWell
+  PathWell,
+  PASSWORD_STRENGTH
 };
