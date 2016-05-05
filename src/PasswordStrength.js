@@ -34,7 +34,7 @@ const PASSWORD_STRENGTH = {
 
 function passwordStrength(password) {
   if (typeof password === 'undefined') {
-    return;
+    return PASSWORD_STRENGTH.VERY_WEAK;
   }
   if (Top1000Passwords.indexOf(password) > -1) {
     return PASSWORD_STRENGTH.VERY_WEAK;

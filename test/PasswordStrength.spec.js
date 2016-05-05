@@ -7,8 +7,8 @@ describe('PasswordStrength', () => {
     expect(passwordStrength).to.be.a('function');
   });
 
-  it('should return undefined if password is undefined', () => {
-    expect(passwordStrength()).to.be.undefined;
+  it('should return VERY_WEAK if password is undefined', () => {
+    expect(passwordStrength()).to.equal(PASSWORD_STRENGTH.VERY_WEAK);
   });
 
   it('should return VERY_WEAK if password is in the top 1000', () => {
